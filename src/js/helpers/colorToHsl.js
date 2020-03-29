@@ -74,9 +74,11 @@ function hexToRGB(h) {
     }
   }
 
-  let rgb = {r, g, b, a};
+  if(a) {
+    a = +(parseInt(a, 16) / 255).toFixed(1);
+  }
 
-  return rgb;
+  return {r, g, b, a};
 }
 
 function RGBToHSL({r,g,b,a}) {
@@ -84,10 +86,6 @@ function RGBToHSL({r,g,b,a}) {
   r /= 255;
   g /= 255;
   b /= 255;
-
-  if(a) {
-    a = +(parseInt(a, 16) / 255).toFixed(1);
-  }
 
   // Find greatest and smallest channel values
   let cmin = Math.min(r,g,b),
