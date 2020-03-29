@@ -62,7 +62,7 @@ H3 {
   margin: 0 1.25em;
   padding: 0 .25em;
   text-align: center;
-  background: var(--col-4);
+  background: var(--col-deepblue);
   color: var(--col-1);
 
   &::before,
@@ -75,11 +75,11 @@ H3 {
 
   &::before {
     left: -.5em;
-    background: linear-gradient(to right bottom, var(--body-bg) 50%, var(--col-4) 0);
+    background: linear-gradient(to right bottom, var(--body-bg) 50%, var(--col-deepblue) 0);
   }
   &::after {
     right: -.5em;
-    background: linear-gradient(to left top, var(--body-bg) 50%, var(--col-4) 0);
+    background: linear-gradient(to left top, var(--body-bg) 50%, var(--col-deepblue) 0);
   }
 }
 
@@ -97,24 +97,3 @@ H3 {
 .page__header-link--about {
   order: -1;
 }
-
-/* OPTIONS
---------------------------------------------- */
-
-.options__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.options__item {
-
-  & + & {
-    margin-top: 1rem;
-  }
-}
-
-/* .options__label {
-
-
-} */

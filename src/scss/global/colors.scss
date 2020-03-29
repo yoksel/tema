@@ -23,45 +23,46 @@
   --col-3-lighter: hsl(0, 0%, 64.7%);
   --col-3-lightest: hsl(0, 0%, 71.7%);
 
-  --col-4-darkest: hsl(202, 81.4%, 9.1%);
-  --col-4-darker: hsl(202, 81.4%, 16.1%);
-  --col-4-dark: hsl(202, 81.4%, 23.1%);
-  --col-4: hsl(202, 81.4%, 30.1%);
-  --col-4-light: hsl(202, 81.4%, 37.1%);
-  --col-4-lighter: hsl(202, 81.4%, 44.1%);
-  --col-4-lightest: hsl(202, 81.4%, 51.1%);
 
-  --col-5-darkest: hsl(0, 0%, -21%);
-  --col-5-darker: hsl(0, 0%, -14%);
-  --col-5-dark: hsl(0, 0%, -7%);
-  --col-5: hsl(0, 0%, 0%);
-  --col-5-light: hsl(0, 0%, 7%);
-  --col-5-lighter: hsl(0, 0%, 14%);
-  --col-5-lightest: hsl(0, 0%, 21%);
+  --col-4-darkest: hsl(0, 0%, -21%);
+  --col-4-darker: hsl(0, 0%, -14%);
+  --col-4-dark: hsl(0, 0%, -7%);
+  --col-4: hsl(0, 0%, 0%);
+  --col-4-light: hsl(0, 0%, 7%);
+  --col-4-lighter: hsl(0, 0%, 14%);
+  --col-4-lightest: hsl(0, 0%, 21%);
 
   --col-green-darkest: hsl(100, 51.5%, 33.9%);
---col-green-darker: hsl(100, 51.5%, 40.9%);
---col-green-dark: hsl(100, 51.5%, 47.9%);
---col-green: hsl(100, 51.5%, 54.9%);
---col-green-light: hsl(100, 51.5%, 61.9%);
---col-green-lighter: hsl(100, 51.5%, 68.9%);
---col-green-lightest: hsl(100, 51.5%, 75.9%);
+  --col-green-darker: hsl(100, 51.5%, 40.9%);
+  --col-green-dark: hsl(100, 51.5%, 47.9%);
+  --col-green: hsl(100, 51.5%, 54.9%);
+  --col-green-light: hsl(100, 51.5%, 61.9%);
+  --col-green-lighter: hsl(100, 51.5%, 68.9%);
+  --col-green-lightest: hsl(100, 51.5%, 75.9%);
+
+  --col-deepblue-darkest: hsl(202, 81.4%, 9.1%);
+  --col-deepblue-darker: hsl(202, 81.4%, 16.1%);
+  --col-deepblue-dark: hsl(202, 81.4%, 23.1%);
+  --col-deepblue: hsl(202, 81.4%, 30.1%);
+  --col-deepblue-light: hsl(202, 81.4%, 37.1%);
+  --col-deepblue-lighter: hsl(202, 81.4%, 44.1%);
+  --col-deepblue-lightest: hsl(202, 81.4%, 51.1%);
 }
 
 BODY {
   --body-bg: var(--col-1);
-  --body-color: var(--col-5);
-  --link-color: var(--col-4);
+  --body-color: var(--col-4);
+  --link-color: var(--col-deepblue);
 
   --accent: var(--col-green-dark);
 
-  --headers-color: var(--col-4);
+  --headers-color: var(--col-deepblue);
 
-  --aside-bg: var(--col-5);
+  --aside-bg: var(--col-4);
 
-  --mark-bg: var(--col-4-dark);
+  --mark-bg: var(--col-deepblue-dark);
   --mark-color: var(--col-2-light);
 
   --code-bg: var(--col-3-lighter);
-  --term-color: var(--col-4-darker);
+  --term-color: var(--col-deepblue-darker);
 }

@@ -13,7 +13,7 @@
 }
 .palette__tip--base {
   justify-self: center;
-  color: var(--col-5-lightest);
+  color: var(--col-4-lightest);
 }
 
 .palette__view {
@@ -40,7 +40,7 @@
 }
 
 .palette__cell--base .palette__cell-content {
-  border: solid var(--col-5);
+  border: solid var(--col-4);
   border-width: 0 2px;
 }
 .palette__cell--first-line .palette__cell-content {
