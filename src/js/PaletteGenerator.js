@@ -8,6 +8,7 @@ export class PaletteGenerator {
   getCode() {
     const list = this.palette.map((item) => {
       return item
+        .filter(item => !item.isEdgeValue)
         .map(({name, color}) => `${name}: ${color};`)
         .join('\n')
     });
@@ -67,17 +68,20 @@ export class PaletteGenerator {
         let newName = `${colorName}-${stepName}`;
         let isBase = false;
         let initialColor = '';
+        let changedHSL = this.hslChangeLight(hsl, stepValue);
+
+        let isEdgeValue = changedHSL.l === 0 || changedHSL.l === 100;
 
         if(stepName === 'normal') {
           newName = colorName;
           isBase = true;
+          isEdgeValue = false;
 
           if (format === 'named') {
             initialColor = color;
           }
         }
 
-        let changedHSL = this.hslChangeLight(hsl, stepValue);
         let formattedColor = hslToFormat({
           hsl: changedHSL,
           format: finalFormat,
@@ -88,7 +92,8 @@ export class PaletteGenerator {
         prev.push({
           name: newName,
           color: formattedColor,
-          isBase
+          isBase,
+          isEdgeValue
         });
         return prev;
       }, []);

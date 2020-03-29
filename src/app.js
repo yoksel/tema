@@ -75,7 +75,7 @@ function fillGrid (paletteData) {
     }
 
     const colorsCells = colorData
-      .map(({name, color, isBase, isKeyword}) => {
+      .map(({name, color, isBase, isKeyword, isEdgeValue}) => {
         let classList = ['palette__cell'];
         let content = `<span class="palette__cell-content">${name}</span>`;
 
@@ -91,9 +91,15 @@ function fillGrid (paletteData) {
           classList.push('palette__cell--keyword');
         }
 
+        if(isEdgeValue) {
+          classList.push('palette__cell--no-color');
+          color = 'transparent';
+          content = '';
+        }
+
         return `<span
           class="${classList.join(' ')}"
-          style="background: ${color}">${content}</span>`;
+          style="background-color: ${color}">${content}</span>`;
       });
 
     paletteView.insertAdjacentHTML('beforeend', colorsCells.join(''));
