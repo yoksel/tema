@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tema</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  </head>
+
+  <body class="page">
+    <div class="l-wrapper">
+      <header class="page__header">
+        <h1 class="page__title">
+          Tema
+          <span class="page__title-text">/ simple palette generator /</span>
+        </h1>
+      </header>
+
+      <main class="l-main">
+        <section class="l-section">
+          <h2 class="visually-hidden">Codes</h2>
+
+          <div class="codes">
+            <div class="codes__item">
+              <h3>Initial palette</h3>
+
+<textarea class="codes__textarea codes__textarea--input">
+--col-hex: #79BD9A;
+--col-hexa: #79BD9A99;
+
+--col-hx: #79B;
+--col-hxa: #79B9;
+
+--col-keyword-t: transparent;
+--col-keyword-c: currentColor;
+
+--col-hsl: hsl(202, 81.4%, 30.1%);
+--col-hsla-1: hsla(100, 51.4%, 55.1%, .5);
+--col-hsla-2: hsla(100, 51.4%, 55.1%, 20.5%);
+--col-hsla-3: hsla(100, 51.4%, 55.1%, 0.5);
+--col-hsla-4: hsla(100, 51.4%, 55.1%, 50%);
+
+--col-named: tomato;
+
+--col-rgb: rgb(0, 128, 128);
+--col-rgbaa-1: rgba(50, 128, 128, .5);
+--col-rgbaa-2: rgba(50, 128, 128, 0.5);
+--col-rgbaa-3: rgba(50, 128, 128, 20.5%);
+--col-rgbaa-4: rgba(50, 128, 128, 50%);
+
+--col-1: #CFF09E;
+--col-2: #A8DBA8;
+--col-3: #79BD9A;
+--col-4: #3B8686;
+--col-5: #0B486B;
+</textarea>
+            </div>
+
+            <div class="codes__item">
+              <h3>Ready palette</h3>
+              <textarea class="codes__textarea codes__textarea--output"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section">
+          <h2>Palette preview</h2>
+
+          <div class="palette">
+            <div class="palette__tips">
+              <span class="palette__tip palette__tip--darker">&larr; Darker</span>
+              <span class="palette__tip palette__tip--base">Base palette</span>
+              <span class="palette__tip palette__tip--lighter">Lighter &rarr;</span>
+            </div>
+
+            <div class="palette__view"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

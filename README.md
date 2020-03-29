@@ -1,0 +1,2 @@
+# Simple color themes generator
+
