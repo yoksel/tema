@@ -1,3 +1,4 @@
+import { Test } from './js/helpers/index.js';
 import { PaletteGenerator } from './js/PaletteGenerator.js';
 import './scss/styles.scss';
 
@@ -10,8 +11,12 @@ const form = document.querySelector('.options__form');
 const colorFormat = document.querySelector('.options__radio')
 
 let palette = new PaletteGenerator();
+let test = new Test(setPalette);
 
 setPalette();
+
+// Run to test all possible colors values
+// test.run();
 
 // ---------------------------------------------
 
