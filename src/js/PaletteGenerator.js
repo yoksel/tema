@@ -85,7 +85,6 @@ export class PaletteGenerator {
           initialColor
         });
 
-
         prev.push({
           name: newName,
           color: formattedColor,
@@ -98,6 +97,13 @@ export class PaletteGenerator {
   hslChangeLight(hslObj, changes) {
     let {h,s,l, a} = hslObj;
     l = +(l + changes).toFixed(1);
+
+    if(l < 0) {
+      l = 0;
+    }
+    else if(l > 100) {
+      l = 100;
+    }
 
     return {h, s, l, a};
   }
