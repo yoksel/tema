@@ -35,10 +35,10 @@ function getColorFormat(color) {
   if(color.startsWith('rgb')) {
     return 'rgb';
   }
-  if(color.startsWith('#') && color.length === 7) {
+  if(color.startsWith('#') && (color.length === 4 || color.length === 7)) {
     return 'hex';
   }
-  if(color.startsWith('#') && color.length === 9) {
+  if(color.startsWith('#') && (color.length === 5 || color.length === 9)) {
     return 'hexa';
   }
   if(color.includes('currentcolor') || color.includes('transparent')) {

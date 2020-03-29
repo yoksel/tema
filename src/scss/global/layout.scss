@@ -9,3 +9,7 @@
 .l-main {
   flex: 1;
 }
+
+.l-section + .l-section {
+  margin-top: 2rem;
+}

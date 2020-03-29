@@ -1,15 +1,4 @@
-import { colorToHsl, hslToString, getColorData } from './helpers/index.js';
-
-const step = 7;
-const colorsSteps = {
-  darkest: -step * 3,
-  darker: -step * 2,
-  dark: -step,
-  normal: 0,
-  light: step,
-  lighter: step * 2,
-  lightest: step * 3,
-};
+import { colorToHsl, hslToString, getColorData, hslToFormat } from './helpers/index.js';
 
 export class PaletteGenerator {
   getData() {
@@ -26,8 +15,14 @@ export class PaletteGenerator {
     return result;
   }
 
-  setPalette(inputValue) {
+  setPalette({
+    inputValue,
+    step,
+    finalFormat
+  }) {
+    this.finalFormat = finalFormat;
     const colors = this.getColorsFromString(inputValue);
+    this.colorSteps = this.getColorSteps(step);
     this.palette = this.createPalette(colors);
   }
 
@@ -56,22 +51,44 @@ export class PaletteGenerator {
         isKeyword: true
       }]
     };
-    return Object.entries(colorsSteps)
-      .reduce((prev, [stepName, stepValue]) => {
-        let color = this.hslChangeLight(hsl, stepValue);
-        color = hslToString({color, alphaUnits});
 
+    let finalFormat = this.finalFormat;
+
+    if(finalFormat === 'initial') {
+      finalFormat = format;
+
+      if (format === 'named') {
+        finalFormat = 'hsl';
+      }
+    }
+
+    return Object.entries(this.colorSteps)
+      .reduce((prev, [stepName, stepValue]) => {
         let newName = `${colorName}-${stepName}`;
         let isBase = false;
+        let initialColor = '';
 
         if(stepName === 'normal') {
           newName = colorName;
           isBase = true;
+
+          if (format === 'named') {
+            initialColor = color;
+          }
         }
+
+        let changedHSL = this.hslChangeLight(hsl, stepValue);
+        let formattedColor = hslToFormat({
+          hsl: changedHSL,
+          format: finalFormat,
+          alphaUnits,
+          initialColor
+        });
+
 
         prev.push({
           name: newName,
-          color,
+          color: formattedColor,
           isBase
         });
         return prev;
@@ -88,7 +105,10 @@ export class PaletteGenerator {
   getColorsFromString(inputValue) {
     return inputValue
       .split('\n')
-      .filter(item => item.trim())
+      .filter(item => {
+        // Trim spaces, ignore comments
+        return item.trim().includes(':');
+      })
       .map(item => {
         const str = item.trim().replace(';', '');
         let [name, color] = str.split(':');
@@ -108,5 +128,17 @@ export class PaletteGenerator {
           ...data
         };
     });
+  }
+
+  getColorSteps(step) {
+    return {
+      darkest: -step * 3,
+      darker: -step * 2,
+      dark: -step,
+      normal: 0,
+      light: +step,
+      lighter: step * 2,
+      lightest: step * 3,
+    }
   }
 }
