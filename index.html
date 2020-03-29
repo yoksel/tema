@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tema / simple palette generator /</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link href="/grid-cheatsheet/styles.css" rel="stylesheet"></head>
+
+  <body class="page">
+    <div class="l-wrapper">
+      <header class="page__header">
+        <h1 class="page__title">
+          Tema
+          <span class="page__title-text">/ simple palette generator /</span>
+        </h1>
+
+        <a
+          class="page__header-link page__header-link--about"
+          href="#about"
+        >About</a>
+
+        <a
+          class="page__header-link page__header-link--options"
+          href="#options"
+        >Options</a>
+      </header>
+
+      <main class="l-main">
+        <section class="l-section">
+          <h2 class="visually-hidden">Codes</h2>
+
+          <div class="codes">
+            <div class="codes__item">
+              <h3>Initial palette</h3>
+
+<textarea class="codes__textarea codes__textarea--input">
+/* Sass variables */
+$scss-color: #0B486B;
+
+/* Less variables */
+@less-color: #0B486B;
+
+--col-named: tomato;
+
+--col-hex: #79BD9A;
+</textarea>
+
+<div class="codes__tip">
+  Allowed all types of variables and color formats
+</div>
+            </div>
+
+            <div class="codes__item">
+              <h3>Ready palette</h3>
+              <textarea class="codes__textarea codes__textarea--output"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="l-section">
+          <h2>Palette preview</h2>
+
+          <div class="palette">
+            <div class="palette__tips">
+              <span class="palette__tip palette__tip--darker">&larr; Darker</span>
+              <span class="palette__tip palette__tip--base">Base palette</span>
+              <span class="palette__tip palette__tip--lighter">Lighter &rarr;</span>
+            </div>
+
+            <div class="palette__view"></div>
+          </div>
+        </section>
+
+        <section class="l-section options" id="options">
+          <h2>Options</h2>
+
+          <form class="options__form">
+
+            <ul class="options__list">
+              <li class="options__item">
+                <label class="options__label options__label--range">
+                  <span class="options__label-text">
+                    Step of changing color lightness
+                  </span>
+
+                  <span class="options__range-wrapper">
+                    <input
+                      class="
+                        options__range
+                        options__range--lightstep"
+                      name="step"
+                      type="range"
+                      min="5"
+                      max="20"
+                      value="7">
+
+                    <span class="options__range-value"></span>
+                  </span>
+                </label>
+              </li>
+
+              <li class="options__item">
+                <fieldset class="options__group">
+                  <legend class="options__legend">Color format in final palette</legend>
+
+                  <label
+                    class="options__label options__label--radio">
+                    <input
+                      class="options__radio visually-hidden"
+                      type="radio"
+                      name="finalFormat"
+                      value="initial"
+                      checked="">
+
+                    <span class="options__label-text">
+                      Initial
+                    </span>
+                  </label>
+
+                  <label
+                    class="options__label options__label--radio">
+                    <input
+                      class="options__radio visually-hidden"
+                      type="radio"
+                      name="finalFormat"
+                      value="hex">
+
+                    <span class="options__label-text">
+                      HEX
+                    </span>
+                  </label>
+
+                  <label
+                    class="options__label options__label--radio">
+                    <input
+                      class="options__radio visually-hidden"
+                      type="radio"
+                      name="finalFormat"
+                      value="hsl">
+
+                    <span class="options__label-text">
+                      HSL
+                    </span>
+                  </label>
+
+                  <label
+                    class="options__label options__label--radio">
+                    <input
+                      class="options__radio visually-hidden"
+                      type="radio"
+                      name="finalFormat"
+                      value="rgb">
+
+                    <span class="options__label-text">
+                      RGB
+                    </span>
+                  </label>
+                </fieldset>
+              </li>
+            </ul>
+          </form>
+        </section>
+
+        <section class="l-section" id="about">
+          <h2>About</h2>
+
+          <p>Tool takes variables with colors and creates simple palette with light and dark variations of every given color. Enjoy!</p>
+        </section>
+      </main>
+    </div>
+  <script type="text/javascript" src="/grid-cheatsheet/bundle.js"></script></body>
+</html>
