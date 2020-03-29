@@ -70,7 +70,7 @@ export class PaletteGenerator {
         let initialColor = '';
         let changedHSL = this.hslChangeLight(hsl, stepValue);
 
-        let isEdgeValue = changedHSL.l === 0 || changedHSL.l === 100;
+        let isEdgeValue = changedHSL.l < 0 || changedHSL.l > 100;
 
         if(stepName === 'normal') {
           newName = colorName;
@@ -102,13 +102,6 @@ export class PaletteGenerator {
   hslChangeLight(hslObj, changes) {
     let {h,s,l, a} = hslObj;
     l = +(l + changes).toFixed(1);
-
-    if(l < 0) {
-      l = 0;
-    }
-    else if(l > 100) {
-      l = 100;
-    }
 
     return {h, s, l, a};
   }
