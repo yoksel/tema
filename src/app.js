@@ -64,6 +64,8 @@ function setLightStepValue() {
   lightstepValue.style.left = `${lightstepValuePos.toFixed(2)}px`;
 }
 
+window.addEventListener('resize', setLightStepValue);
+
 // ---------------------------------------------
 
 function fillGrid (paletteData) {
