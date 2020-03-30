@@ -30,9 +30,11 @@
 
           <div class="codes">
             <div class="codes__item">
-              <h3>Initial palette</h3>
+              <label class="codes__label" for="input">Initial palette</label>
 
-<textarea class="codes__textarea codes__textarea--input">
+<textarea
+  id="input"
+  class="codes__textarea codes__textarea--input">
 /* Sass variables */
 $scss-color: #0B486B;
 
@@ -50,8 +52,13 @@ $scss-color: #0B486B;
             </div>
 
             <div class="codes__item">
-              <h3>Ready palette</h3>
-              <textarea class="codes__textarea codes__textarea--output"></textarea>
+              <label
+                class="codes__label"
+                for="output">Ready palette</label>
+
+              <textarea
+                id="output"
+                class="codes__textarea codes__textarea--output"></textarea>
             </div>
           </div>
         </section>

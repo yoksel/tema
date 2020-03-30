@@ -6,6 +6,13 @@
     flex-basis: 48%;
   }
 
+  &__label {
+    display: block;
+    margin-bottom: .25em;
+    font-size: 1.2em;
+    color: var(--headers-color);
+  }
+
   &__textarea {
     display: block;
     width: 100%;
