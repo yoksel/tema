@@ -11,6 +11,7 @@
 
   &__label {
     display: block;
+    min-height: 30px;
     font-size: 1.2em;
     color: var(--headers-color);
   }
