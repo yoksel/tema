@@ -6,7 +6,7 @@
   <link href="/tema/styles.css" rel="stylesheet"></head>
 
   <body class="page">
-    <div class="l-wrapper">
+    <div class="page-wrapper">
       <header class="page__header">
         <h1 class="page__title">
           Tema
@@ -24,25 +24,20 @@
         >Options</a>
       </header>
 
-      <main class="l-main">
-        <section class="l-section">
+      <main class="page-main">
+        <section class="page-section">
           <h2 class="visually-hidden">Codes</h2>
 
           <div class="codes">
             <div class="codes__item">
-              <h3>Initial palette</h3>
+              <label
+                class="codes__label"
+                for="input">Initial palette</label>
 
-<textarea class="codes__textarea codes__textarea--input">
-/* Sass variables */
-$scss-color: #0B486B;
-
-/* Less variables */
-@less-color: #0B486B;
-
---col-named: tomato;
-
---col-hex: #79BD9A;
-</textarea>
+              <div class="codes__controls"></div>
+<textarea
+  id="input"
+  class="codes__textarea codes__textarea--input"></textarea>
 
 <div class="codes__tip">
   Allowed all types of variables and color formats
@@ -50,13 +45,18 @@ $scss-color: #0B486B;
             </div>
 
             <div class="codes__item">
-              <h3>Ready palette</h3>
-              <textarea class="codes__textarea codes__textarea--output"></textarea>
+              <label
+                class="codes__label"
+                for="output">Ready palette</label>
+
+              <textarea
+                id="output"
+                class="codes__textarea codes__textarea--output"></textarea>
             </div>
           </div>
         </section>
 
-        <section class="l-section">
+        <section class="page-section">
           <h2>Palette preview</h2>
 
           <div class="palette">
@@ -70,12 +70,38 @@ $scss-color: #0B486B;
           </div>
         </section>
 
-        <section class="l-section options" id="options">
+        <section class="page-section options" id="options">
           <h2>Options</h2>
 
           <form class="options__form">
 
             <ul class="options__list">
+              <li class="options__item">
+                <label class="options__label options__label--range">
+                  <span class="options__label-text">
+                    Color steps
+                  </span>
+
+                  <span class="options__range-wrapper">
+                    <input
+                      class="
+                        options__range
+                        options__range--stepsquantity"
+                      name="stepsQuantity"
+                      type="range"
+                      min="1"
+                      max="3"
+                      value="3">
+
+                    <span
+                      class="
+                        options__range-value
+                        options__range-value--stepsquantity"
+                    ></span>
+                  </span>
+                </label>
+              </li>
+
               <li class="options__item">
                 <label class="options__label options__label--range">
                   <span class="options__label-text">
@@ -93,7 +119,11 @@ $scss-color: #0B486B;
                       max="20"
                       value="7">
 
-                    <span class="options__range-value"></span>
+                    <span
+                      class="
+                        options__range-value
+                        options__range-value--lightstep"
+                    ></span>
                   </span>
                 </label>
               </li>
@@ -160,12 +190,17 @@ $scss-color: #0B486B;
           </form>
         </section>
 
-        <section class="l-section" id="about">
+        <section class="page-section page-section--about" id="about">
           <h2>About</h2>
 
           <p>Tool takes variables with colors and creates simple palette with light and dark variations of every given color. Enjoy!</p>
         </section>
       </main>
+
+      <footer class="page-footer">
+        <a href="https://github.com/yoksel/tema/">Project on GitHub</a>
+        <a href="https://twitter.com/yoksel_en">@yoksel_en</a>
+      </footer>
     </div>
   <script type="text/javascript" src="/tema/bundle.js"></script></body>
 </html>
