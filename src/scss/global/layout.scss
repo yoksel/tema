@@ -1,15 +1,28 @@
-.l-wrapper {
+.page-wrapper {
   width: 100%;
   max-width: 900px;
   min-height: 100%;
   margin: auto;
   padding: 2rem;
+  padding-bottom: 5rem;
 }
 
-.l-main {
+.page-main {
   flex: 1;
 }
 
-.l-section + .l-section {
+.page-section + .page-section {
   margin-top: 3rem;
+}
+
+.page-section--about {
+  min-height: 150px;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1em;
+  border-top: 1px solid var(--col-2);
 }
