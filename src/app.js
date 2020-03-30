@@ -10,10 +10,11 @@ const stepsQuantityValue = document.querySelector('.options__range-value--stepsq
 const lightstep = document.querySelector('.options__range--lightstep');
 const lightstepValue = document.querySelector('.options__range-value--lightstep');
 const form = document.querySelector('.options__form');
-const codesControls = document.querySelector('.codes__controls')
+const codesControls = document.querySelector('.codes__controls');
 
-let palette = new PaletteGenerator();
-let test = new Test(setPalette);
+const palette = new PaletteGenerator();
+/* eslint-disable-next-line */
+const test = new Test(setPalette);
 
 setPalette();
 
@@ -32,13 +33,13 @@ inputElem.addEventListener('input', setPalette);
 lightstep.addEventListener('input', setPalette);
 stepsQuantity.addEventListener('input', setPalette);
 
-for(const formatInput of form.elements['finalFormat']) {
+for (const formatInput of form.elements.finalFormat) {
   formatInput.addEventListener('input', setPalette);
 }
 
 // ---------------------------------------------
 
-function setPalette() {
+function setPalette () {
   const options = {};
 
   setRangeValues();
@@ -64,15 +65,15 @@ function setPalette() {
 
 // ---------------------------------------------
 
-function setRangeValues() {
+function setRangeValues () {
   setRangeValue(lightstep, lightstepValue);
   setRangeValue(stepsQuantity, stepsQuantityValue);
 }
 
 // ---------------------------------------------
 
-function setRangeValue(input, inputValue) {
-  const {value, min, max, offsetWidth} = input;
+function setRangeValue (input, inputValue) {
+  const { value, min, max, offsetWidth } = input;
   inputValue.innerHTML = value;
 
   const realPos = value - min;

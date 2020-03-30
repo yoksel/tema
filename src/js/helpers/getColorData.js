@@ -1,6 +1,6 @@
 import { named } from '../data/named.js';
 
-function getColorData(color) {
+function getColorData (color) {
   const format = getColorFormat(color);
   const alphaUnits = getAlphaUnits({
     color,
@@ -15,41 +15,41 @@ function getColorData(color) {
 
 export default getColorData;
 
-function getColorFormat(color) {
+function getColorFormat (color) {
   color = color
     .toLowerCase()
     .trim();
 
-  if(named[color]) {
+  if (named[color]) {
     return 'named';
   }
-  if(color.startsWith('hsla')) {
+  if (color.startsWith('hsla')) {
     return 'hsla';
   }
-  if(color.startsWith('hsl')) {
+  if (color.startsWith('hsl')) {
     return 'hsl';
   }
-  if(color.startsWith('rgba')) {
+  if (color.startsWith('rgba')) {
     return 'rgba';
   }
-  if(color.startsWith('rgb')) {
+  if (color.startsWith('rgb')) {
     return 'rgb';
   }
-  if(color.startsWith('#') && (color.length === 4 || color.length === 7)) {
+  if (color.startsWith('#') && (color.length === 4 || color.length === 7)) {
     return 'hex';
   }
-  if(color.startsWith('#') && (color.length === 5 || color.length === 9)) {
+  if (color.startsWith('#') && (color.length === 5 || color.length === 9)) {
     return 'hexa';
   }
-  if(color.includes('currentcolor') || color.includes('transparent')) {
+  if (color.includes('currentcolor') || color.includes('transparent')) {
     return 'keyword';
   }
 
   return 'Unknown color format';
 }
 
-function getAlphaUnits({color, format}) {
-  if(!['hsla', 'rgba'].includes(format)) {
+function getAlphaUnits ({ color, format }) {
+  if (!['hsla', 'rgba'].includes(format)) {
     return '';
   }
 
@@ -60,10 +60,9 @@ function getAlphaUnits({color, format}) {
 
   const alpha = colorParts[3];
 
-  if(alpha.includes('%')) {
-    return '%'
+  if (alpha.includes('%')) {
+    return '%';
   }
 
   return '';
 }
-

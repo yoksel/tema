@@ -1,9 +1,9 @@
-function hslToString({color, alphaUnits}) {
-  let {h, s, l, a} = color;
+function hslToString ({ color, alphaUnits }) {
+  const { h, s, l, a } = color;
   const colorsList = [h, `${s}%`, `${l}%`];
   let format = 'hsl';
 
-  if(a) {
+  if (a) {
     format = 'hsla';
     colorsList.push(`${a}${alphaUnits}`);
   }

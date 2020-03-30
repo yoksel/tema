@@ -1,11 +1,11 @@
-import {examplePalettes} from '../data/examplePalettes.js';
+import { examplePalettes } from '../data/examplePalettes.js';
 
-export function addExampleControls({
+export function addExampleControls ({
   controlsElem,
   inputElem,
   setPalette
 }) {
-  for(const [name, colors] of Object.entries(examplePalettes)) {
+  for (const [name, colors] of Object.entries(examplePalettes)) {
     const gradient = getGradient(colors);
 
     controlsElem.insertAdjacentHTML('beforeend', `<button
@@ -21,7 +21,7 @@ export function addExampleControls({
   controlsElem.addEventListener('click', (event) => {
     const button = event.target.closest('.codes__control');
 
-    if(!button) {
+    if (!button) {
       return;
     }
     const palette = examplePalettes[button.dataset.name];
@@ -30,7 +30,7 @@ export function addExampleControls({
   });
 }
 
-function getCodes(colors) {
+function getCodes (colors) {
   return colors
     .reduce((prev, item, index) => {
       prev.push(`--col-${index + 1}: ${item};`);
@@ -39,15 +39,14 @@ function getCodes(colors) {
     .join('\n');
 }
 
-function getGradient(colors) {
-  let colorStops = [];
+function getGradient (colors) {
+  const colorStops = [];
   const step = 100 / colors.length;
 
-  for(let i = 0; i < colors.length; i++) {
+  for (let i = 0; i < colors.length; i++) {
     const color = colors[i];
     colorStops.push(`${color} 0, ${color} ${step * (i + 1)}%`);
   }
 
   return `linear-gradient(to right, ${colorStops.join(', ')})`;
 }
-
