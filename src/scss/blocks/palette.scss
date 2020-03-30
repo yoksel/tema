@@ -1,6 +1,16 @@
+.palette {
+  display: flex;
+  flex-direction: column;
+}
+
 .palette__tips {
+  order: -1;
   display: grid;
   grid-template-columns: 3fr  1fr  3fr;
+
+  .palette__view:empty + & {
+    opacity: .35;
+  }
 }
 
 .palette__tip {

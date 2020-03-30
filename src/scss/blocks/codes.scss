@@ -25,6 +25,12 @@
     box-sizing: border-box;
     border: 1px solid var(--col-2);
     border-radius: .25rem;
+    font: 15px/1.4 Trebuchet MS, sans-serif;
+
+    &::placeholder {
+      color: var(--col-3);
+      font-style: italic;
+    }
   }
 
   &__controls {
