@@ -79,7 +79,7 @@ export class PaletteGenerator {
           isBase = true;
           isEdgeValue = false;
 
-          if (format === 'named') {
+          if (format === 'named' && this.finalFormat === 'initial') {
             initialColor = color;
           }
         }
