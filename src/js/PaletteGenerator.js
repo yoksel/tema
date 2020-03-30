@@ -48,6 +48,7 @@ export class PaletteGenerator {
     if(format === 'keyword') {
       return [{
         name: colorName,
+        hsl,
         color,
         isBase: true,
         isKeyword: true
@@ -92,6 +93,7 @@ export class PaletteGenerator {
 
         prev.push({
           name: newName,
+          hsl: changedHSL,
           color: formattedColor,
           isBase,
           isEdgeValue

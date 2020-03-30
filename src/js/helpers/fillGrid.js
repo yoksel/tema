@@ -10,11 +10,11 @@ export function fillGrid ({elem, data, stepsQuantity}) {
     else if(index === data.length - 1) {
       lineClass = 'palette__cell--last-line';
     }
-
     const colorsCells = colorData
-      .map(({name, color, isBase, isKeyword, isEdgeValue}) => {
+      .map(({name, hsl, color, isBase, isKeyword, isEdgeValue}) => {
         let classList = ['palette__cell'];
         let content = `<span class="palette__cell-content">${name}</span>`;
+        let {l} = hsl;
 
         if(isBase) {
           classList.push('palette__cell--base')
@@ -26,6 +26,10 @@ export function fillGrid ({elem, data, stepsQuantity}) {
 
         if(isKeyword) {
           classList.push('palette__cell--keyword');
+        }
+
+        if(l < 25) {
+          classList.push('palette__cell--dark');
         }
 
         if(isEdgeValue) {
