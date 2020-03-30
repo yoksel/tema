@@ -5,8 +5,10 @@ import './scss/styles.scss';
 const inputElem = document.querySelector('.codes__textarea--input');
 const output = document.querySelector('.codes__textarea--output');
 const paletteView = document.querySelector('.palette__view');
+const stepsQuantity = document.querySelector('.options__range--stepsquantity');
+const stepsQuantityValue = document.querySelector('.options__range-value--stepsquantity');
 const lightstep = document.querySelector('.options__range--lightstep');
-const lightstepValue = document.querySelector('.options__range-value');
+const lightstepValue = document.querySelector('.options__range-value--lightstep');
 const form = document.querySelector('.options__form');
 const codesControls = document.querySelector('.codes__controls')
 
@@ -28,6 +30,7 @@ addExampleControls({
 
 inputElem.addEventListener('input', setPalette);
 lightstep.addEventListener('input', setPalette);
+stepsQuantity.addEventListener('input', setPalette);
 
 for(const formatInput of form.elements['finalFormat']) {
   formatInput.addEventListener('input', setPalette);
@@ -38,7 +41,7 @@ for(const formatInput of form.elements['finalFormat']) {
 function setPalette() {
   const options = {};
 
-  setLightStepValue();
+  setRangeValues();
 
   for (const [name, value] of new FormData(form)) {
     options[name] = value;
@@ -54,23 +57,31 @@ function setPalette() {
 
   fillGrid({
     data: palette.getData(),
-    elem: paletteView
+    elem: paletteView,
+    stepsQuantity: stepsQuantity.value
   });
 }
 
 // ---------------------------------------------
 
-function setLightStepValue() {
-  const {value, min, max, offsetWidth} = lightstep;
-  lightstepValue.innerHTML = value;
+function setRangeValues() {
+  setRangeValue(lightstep, lightstepValue);
+  setRangeValue(stepsQuantity, stepsQuantityValue);
+}
+
+// ---------------------------------------------
+
+function setRangeValue(input, inputValue) {
+  const {value, min, max, offsetWidth} = input;
+  inputValue.innerHTML = value;
 
   const realPos = value - min;
   const realMax = max - min;
-  const elemWidth = offsetWidth - lightstepValue.offsetWidth / 2;
+  const elemWidth = offsetWidth - inputValue.offsetWidth / 2;
 
-  const lightstepValuePos = realPos / realMax * elemWidth;
+  const inputValuePos = realPos / realMax * elemWidth;
 
-  lightstepValue.style.left = `${lightstepValuePos.toFixed(2)}px`;
+  inputValue.style.left = `${inputValuePos.toFixed(2)}px`;
 }
 
-window.addEventListener('resize', setLightStepValue);
+window.addEventListener('resize', setRangeValues);

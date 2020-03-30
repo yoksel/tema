@@ -1,4 +1,4 @@
-export function fillGrid ({elem, data}) {
+export function fillGrid ({elem, data, stepsQuantity}) {
   elem.innerHTML = '';
   let index = 0;
 
@@ -42,4 +42,6 @@ export function fillGrid ({elem, data}) {
     elem.insertAdjacentHTML('beforeend', colorsCells.join(''));
     index++;
   }
+
+  elem.style.setProperty('--columns', stepsQuantity * 2 + 1);
 }

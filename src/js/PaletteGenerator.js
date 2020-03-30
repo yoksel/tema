@@ -19,11 +19,12 @@ export class PaletteGenerator {
   setPalette({
     inputValue,
     step,
+    stepsQuantity,
     finalFormat
   }) {
     this.finalFormat = finalFormat;
     const colors = this.getColorsFromString(inputValue);
-    this.colorSteps = this.getColorSteps(step);
+    this.colorSteps = this.getColorSteps(step, stepsQuantity);
     this.palette = this.createPalette(colors);
   }
 
@@ -134,8 +135,8 @@ export class PaletteGenerator {
     });
   }
 
-  getColorSteps(step) {
-    return {
+  getColorSteps(step, stepsQuantity) {
+    const steps = {
       darkest: -step * 3,
       darker: -step * 2,
       dark: -step,
@@ -143,6 +144,18 @@ export class PaletteGenerator {
       light: +step,
       lighter: step * 2,
       lightest: step * 3,
+    };
+
+    if(stepsQuantity === 3) {
+      return steps;
     }
+
+    const stepsList = Object.entries(steps);
+    // One central cell + added variations
+    const sliceSize = stepsQuantity * 2 + 1;
+    const sliceOffset = (stepsList.length - sliceSize) / 2;
+    const slice = stepsList.splice(sliceOffset,sliceSize);
+
+    return Object.fromEntries(slice);
   }
 }
