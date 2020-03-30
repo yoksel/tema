@@ -37,7 +37,15 @@
               <div class="codes__controls"></div>
 <textarea
   id="input"
-  class="codes__textarea codes__textarea--input"></textarea>
+  class="codes__textarea codes__textarea--input"
+  placeholder="Add here list of your color variables, for example:
+
+--accent: crimson;
+--background: rgb(64, 169, 155);
+
+or select palette above to see how it works
+"
+  ></textarea>
 
 <div class="codes__tip">
   Allowed all types of variables and color formats
@@ -60,13 +68,13 @@
           <h2>Palette preview</h2>
 
           <div class="palette">
+            <div class="palette__view"></div>
+
             <div class="palette__tips">
               <span class="palette__tip palette__tip--darker">&larr; Darker</span>
               <span class="palette__tip palette__tip--base">Base palette</span>
               <span class="palette__tip palette__tip--lighter">Lighter &rarr;</span>
             </div>
-
-            <div class="palette__view"></div>
           </div>
         </section>
 
