@@ -1,26 +1,32 @@
-import { fillGrid, Test } from './js/helpers/index.js';
+import { fillGrid, addExampleControls, Test } from './js/helpers/index.js';
 import { PaletteGenerator } from './js/PaletteGenerator.js';
 import './scss/styles.scss';
 
-const input = document.querySelector('.codes__textarea--input');
+const inputElem = document.querySelector('.codes__textarea--input');
 const output = document.querySelector('.codes__textarea--output');
 const paletteView = document.querySelector('.palette__view');
 const lightstep = document.querySelector('.options__range--lightstep');
 const lightstepValue = document.querySelector('.options__range-value');
 const form = document.querySelector('.options__form');
-const colorFormat = document.querySelector('.options__radio')
+const codesControls = document.querySelector('.codes__controls')
 
 let palette = new PaletteGenerator();
 let test = new Test(setPalette);
 
 setPalette();
 
+addExampleControls({
+  controlsElem: codesControls,
+  inputElem,
+  setPalette
+});
+
 // Run to test all possible colors values
 // test.run();
 
 // ---------------------------------------------
 
-input.addEventListener('input', setPalette);
+inputElem.addEventListener('input', setPalette);
 lightstep.addEventListener('input', setPalette);
 
 for(const formatInput of form.elements['finalFormat']) {
@@ -39,7 +45,7 @@ function setPalette() {
   }
 
   palette.setPalette({
-    inputValue: input.value,
+    inputValue: inputElem.value,
     ...options
   });
   const code = palette.getCode();

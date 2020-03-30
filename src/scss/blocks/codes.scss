@@ -4,11 +4,13 @@
 
   &__item {
     flex-basis: 48%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
 
   &__label {
     display: block;
-    margin-bottom: .25em;
     font-size: 1.2em;
     color: var(--headers-color);
   }
@@ -17,9 +19,28 @@
     display: block;
     width: 100%;
     min-height: 200px;
+    margin-top: .5em;
     padding: .25em;
+    box-sizing: border-box;
     border: 1px solid var(--col-2);
     border-radius: .25rem;
+  }
+
+  &__controls {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__control {
+    align-items: center;
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: .25rem;
+    border: 1px solid var(--col-2);
+
+    & + & {
+      margin-left: 1rem;
+    }
   }
 
   &__tip {

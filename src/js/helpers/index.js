@@ -4,6 +4,7 @@ import hslToFormat from './hslToFormat';
 import getColorData from './getColorData';
 import Test from './Test';
 import {fillGrid} from './fillGrid';
+import {addExampleControls} from './addExampleControls';
 
 export {
   colorToHsl,
@@ -11,5 +12,6 @@ export {
   hslToFormat,
   getColorData,
   Test,
-  fillGrid
+  fillGrid,
+  addExampleControls
 };
