@@ -15,7 +15,7 @@
 
 .palette__tip {
   padding: .5rem;
-  color: var(--col-3);
+  color: var(--color-3);
 }
 
 .palette__tip--darker {
@@ -24,7 +24,7 @@
 .palette__tip--base {
   justify-self: center;
   white-space: nowrap;
-  color: var(--col-4-lightest);
+  color: var(--color-4-lightest);
 }
 
 .palette__view {
@@ -35,7 +35,7 @@
   &:empty::before {
     content: "";
     grid-column: 1 / -1;
-    background: var(--col-2-light);
+    background: var(--color-2-light);
     height: 3.75rem;
     border-radius: 1rem;
   }
@@ -52,7 +52,7 @@
 }
 
 .palette__cell--base .palette__cell-content {
-  border: solid var(--col-4);
+  border: solid var(--color-4);
   border-width: 0 2px;
 }
 .palette__cell--first-line .palette__cell-content {
@@ -79,7 +79,7 @@
 .palette__cell--no-color {
   background-image: repeating-linear-gradient(-45deg,
     transparent, transparent 5px,
-    var(--col-2-light) 0, var(--col-2-light) 6px
+    var(--color-2-light) 0, var(--color-2-light) 6px
   );
   box-shadow: 0 0 0 2px #FFF inset;
 }

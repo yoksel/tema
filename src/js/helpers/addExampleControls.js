@@ -33,7 +33,7 @@ export function addExampleControls ({
 function getCodes (colors) {
   return colors
     .reduce((prev, item, index) => {
-      prev.push(`--col-${index + 1}: ${item};`);
+      prev.push(`--color-${index + 1}: ${item};`);
       return prev;
     }, [])
     .join('\n');

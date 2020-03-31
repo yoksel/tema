@@ -57,7 +57,7 @@
 }
 
 .options__range:focus + .options__range-value {
-  background: var(--col-2);
+  background: var(--color-2);
 }
 
 .options__label--radio {
@@ -68,7 +68,7 @@
   }
 
   .options__label-text {
-    --border-color: var(--col-2);
+    --border-color: var(--color-2);
     padding: .5em;
     border-radius: .5em;
     box-shadow: 0 0 0 2px var(--border-color) inset;
@@ -77,10 +77,10 @@
   }
 
   &:hover .options__label-text {
-    --border-color: var(--col-green);
+    --border-color: var(--color-green);
   }
 
   input:checked + .options__label-text {
-    --border-color: var(--col-deepblue);
+    --border-color: var(--color-deepblue);
   }
 }

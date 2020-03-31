@@ -23,12 +23,12 @@
     margin-top: .5em;
     padding: .25em;
     box-sizing: border-box;
-    border: 1px solid var(--col-2);
+    border: 1px solid var(--color-2);
     border-radius: .25rem;
     font: 15px/1.4 Trebuchet MS, sans-serif;
 
     &::placeholder {
-      color: var(--col-3);
+      color: var(--color-3);
       font-style: italic;
     }
   }
@@ -43,7 +43,7 @@
     width: 1.75em;
     height: 1.75em;
     border-radius: .25rem;
-    border: 1px solid var(--col-2);
+    border: 1px solid var(--color-2);
 
     & + & {
       margin-left: 1rem;
@@ -53,6 +53,6 @@
   &__tip {
     margin-top: .5em;
     font-size: .9em;
-    color: var(--col-3);
+    color: var(--color-3);
   }
 }
