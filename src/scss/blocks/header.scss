@@ -27,6 +27,7 @@
     left: -.5em;
     background: linear-gradient(to right bottom, var(--body-bg) 50%, var(--color-deepblue) 0);
   }
+
   &::after {
     right: -.5em;
     background: linear-gradient(to left top, var(--body-bg) 50%, var(--color-deepblue) 0);
@@ -44,6 +45,7 @@
   line-height: 1.2;
   color: var(--color-3);
 }
+
 .page__header-link--about {
   order: -1;
 }

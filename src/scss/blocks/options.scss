@@ -5,7 +5,6 @@
 }
 
 .options__item {
-
   & + & {
     margin-top: 2rem;
   }
@@ -69,6 +68,7 @@
 
   .options__label-text {
     --border-color: var(--color-2);
+
     padding: .5em;
     border-radius: .5em;
     box-shadow: 0 0 0 2px var(--border-color) inset;
@@ -80,7 +80,7 @@
     --border-color: var(--color-green);
   }
 
-  input:checked + .options__label-text {
+  INPUT:checked + .options__label-text {
     --border-color: var(--color-deepblue);
   }
 }

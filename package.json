@@ -1,36 +1,35 @@
 {
-  "name": "grid-cheatsheet",
+  "name": "tema",
   "version": "1.0.0",
-  "description": "Grid Cheatsheet",
+  "description": "Tema",
   "scripts": {
-    "test": "npm run js:lint && npm run css:lint && jest",
+    "test": "npm run js:lint && npm run css:lint",
     "build": "webpack --config prod.config.js",
     "start": "webpack-dev-server --open",
     "deploy": "npm run build && gh-pages -d dist",
-    "lint": "eslint src",
+    "lint": "npm run js:lint && npm run css:lint",
+    "lint:fix": "npm run js:fix && npm run css:fix",
     "js:lint": "eslint src",
     "js:fix": "eslint src --fix",
-    "css:lint": "stylelint src/**/*.scss",
-    "css:fix": "stylelint src/**/*.scss --fix",
-    "jest": "jest"
+    "css:lint": "stylelint **/*.scss",
+    "css:fix": "stylelint **/*.scss --fix"
   },
   "author": "yoksel",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yoksel/grid-cheatsheet.git"
+    "url": "git@github.com:yoksel/tema.git"
   },
   "bugs": {
-    "url": "https://github.com/yoksel/grid-cheatsheet/issues"
+    "url": "https://github.com/yoksel/tema/issues"
   },
-  "homepage": "https://github.com/yoksel/grid-cheatsheet",
+  "homepage": "https://github.com/yoksel/tema",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/polyfill": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^25.1.0",
     "css-loader": "^3.4.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
@@ -42,8 +41,6 @@
     "file-loader": "^5.0.2",
     "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^25.1.0",
-    "jest-transform-stub": "^2.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",

@@ -6,7 +6,6 @@
   --color-1-light: hsl(0, 0%, 107%);
   --color-1-lighter: hsl(0, 0%, 114%);
   --color-1-lightest: hsl(0, 0%, 121%);
-
   --color-2-darkest: hsl(0, 0%, 65.7%);
   --color-2-darker: hsl(0, 0%, 72.7%);
   --color-2-dark: hsl(0, 0%, 79.7%);
@@ -14,7 +13,6 @@
   --color-2-light: hsl(0, 0%, 93.7%);
   --color-2-lighter: hsl(0, 0%, 100.7%);
   --color-2-lightest: hsl(0, 0%, 107.7%);
-
   --color-3-darkest: hsl(0, 0%, 29.7%);
   --color-3-darker: hsl(0, 0%, 36.7%);
   --color-3-dark: hsl(0, 0%, 43.7%);
@@ -22,8 +20,6 @@
   --color-3-light: hsl(0, 0%, 57.7%);
   --color-3-lighter: hsl(0, 0%, 64.7%);
   --color-3-lightest: hsl(0, 0%, 71.7%);
-
-
   --color-4-darkest: hsl(0, 0%, -21%);
   --color-4-darker: hsl(0, 0%, -14%);
   --color-4-dark: hsl(0, 0%, -7%);
@@ -31,7 +27,6 @@
   --color-4-light: hsl(0, 0%, 7%);
   --color-4-lighter: hsl(0, 0%, 14%);
   --color-4-lightest: hsl(0, 0%, 21%);
-
   --color-green-darkest: hsl(100, 51.5%, 33.9%);
   --color-green-darker: hsl(100, 51.5%, 40.9%);
   --color-green-dark: hsl(100, 51.5%, 47.9%);
@@ -39,7 +34,6 @@
   --color-green-light: hsl(100, 51.5%, 61.9%);
   --color-green-lighter: hsl(100, 51.5%, 68.9%);
   --color-green-lightest: hsl(100, 51.5%, 75.9%);
-
   --color-deepblue-darkest: hsl(202, 81.4%, 9.1%);
   --color-deepblue-darker: hsl(202, 81.4%, 16.1%);
   --color-deepblue-dark: hsl(202, 81.4%, 23.1%);
@@ -53,16 +47,11 @@ BODY {
   --body-bg: var(--color-1);
   --body-color: var(--color-4);
   --link-color: var(--color-deepblue);
-
   --accent: var(--color-green-dark);
-
   --headers-color: var(--color-deepblue);
-
   --aside-bg: var(--color-4);
-
   --mark-bg: var(--color-deepblue-dark);
   --mark-color: var(--color-2-light);
-
   --code-bg: var(--color-3-lighter);
   --term-color: var(--color-deepblue-darker);
 }

@@ -21,6 +21,7 @@
 .palette__tip--darker {
   justify-self: flex-end;
 }
+
 .palette__tip--base {
   justify-self: center;
   white-space: nowrap;
@@ -56,9 +57,11 @@
   border: solid var(--color-4);
   border-width: 0 2px;
 }
+
 .palette__cell--first-line .palette__cell-content {
   border-top-width: 2px;
 }
+
 .palette__cell--last-line .palette__cell-content {
   border-bottom-width: 2px;
 }
@@ -78,9 +81,12 @@
 }
 
 .palette__cell--no-color {
-  background-image: repeating-linear-gradient(-45deg,
-    transparent, transparent 5px,
-    var(--color-2-light) 0, var(--color-2-light) 6px
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    var(--color-2-light) 0,
+    var(--color-2-light) 6px
   );
   box-shadow: 0 0 0 2px #FFF inset;
 }
