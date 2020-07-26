@@ -12,7 +12,17 @@ export class PaletteGenerator {
         .map(({ name, color }) => `${name}: ${color};`)
         .join('\n');
     });
-    const result = list.join('\n\n');
+    let result = '';
+
+    if (list.length > 0) {
+      result = `/*
+Initial colors:
+
+${this.inputValue}
+*/\n\n`;
+      result += list.join('\n\n');
+    }
+
     return result;
   }
 
@@ -23,6 +33,7 @@ export class PaletteGenerator {
     finalFormat
   }) {
     this.finalFormat = finalFormat;
+    this.inputValue = inputValue;
     const colors = this.getColorsFromString(inputValue);
     this.colorSteps = this.getColorSteps(step, stepsQuantity);
     this.palette = this.createPalette(colors);
