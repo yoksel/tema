@@ -2,7 +2,7 @@ import { hslToString } from './index.js';
 
 // https://css-tricks.com/converting-color-spaces-in-javascript/
 
-function hslToFormat ({ hsl, format, alphaUnits, initialColor }) {
+export function hslToFormat ({ hsl, format, alphaUnits, initialColor }) {
   if (initialColor) {
     return initialColor;
   }
@@ -20,8 +20,6 @@ function hslToFormat ({ hsl, format, alphaUnits, initialColor }) {
 
   return HSLToRGBString({ hsl, alphaUnits });
 }
-
-export default hslToFormat;
 
 function HSLToRGBString ({ hsl, alphaUnits }) {
   let { h, s, l, a } = hsl;

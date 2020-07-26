@@ -1,17 +1,7 @@
-import colorToHsl from './colorToHsl';
-import hslToString from './hslToString';
-import hslToFormat from './hslToFormat';
-import getColorData from './getColorData';
-import Test from './Test';
-import { fillGrid } from './fillGrid';
-import { addExampleControls } from './addExampleControls';
-
-export {
-  colorToHsl,
-  hslToString,
-  hslToFormat,
-  getColorData,
-  Test,
-  fillGrid,
-  addExampleControls
-};
+export { colorToHsl } from './color-to-hsl';
+export { hslToString } from './hsl-to-string';
+export { hslToFormat } from './hsl-to-format';
+export { getColorData } from './get-color-data';
+export { Test } from './test';
+export { fillGrid } from './fill-grid';
+export { addExampleControls } from './add-example-controls';

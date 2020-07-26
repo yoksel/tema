@@ -1,4 +1,4 @@
-function hslToString ({ color, alphaUnits }) {
+export function hslToString ({ color, alphaUnits }) {
   const { h, s, l, a } = color;
   const colorsList = [h, `${s}%`, `${l}%`];
   let format = 'hsl';
@@ -10,5 +10,3 @@ function hslToString ({ color, alphaUnits }) {
 
   return `${format}(${colorsList.join(', ')})`;
 }
-
-export default hslToString;

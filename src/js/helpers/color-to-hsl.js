@@ -1,6 +1,6 @@
 import { named } from '../data/named.js';
 
-function colorToHsl ({ color, format }) {
+export function colorToHsl ({ color, format }) {
   color = color.toLowerCase();
 
   if (format === 'keyword') {
@@ -18,8 +18,6 @@ function colorToHsl ({ color, format }) {
 
   return RGBToHSL(hexToRGB(color));
 }
-
-export default colorToHsl;
 
 function hslFromString (str) {
   let colorParts = str

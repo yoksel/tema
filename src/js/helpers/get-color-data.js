@@ -1,6 +1,6 @@
 import { named } from '../data/named.js';
 
-function getColorData (color) {
+export function getColorData (color) {
   const format = getColorFormat(color);
   const alphaUnits = getAlphaUnits({
     color,
@@ -12,8 +12,6 @@ function getColorData (color) {
     alphaUnits
   };
 }
-
-export default getColorData;
 
 function getColorFormat (color) {
   color = color

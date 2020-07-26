@@ -31,7 +31,7 @@ $scss-color: #0B486B;
 --color-black: hsl(0, 0%, 0%);
 `;
 
-class Test {
+export class Test {
   constructor(func) {
     this.func = func;
   }
@@ -40,5 +40,3 @@ class Test {
 
   }
 }
-
-export default Test;
