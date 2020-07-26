@@ -1,4 +1,4 @@
-import { examplePalettes } from '../data/examplePalettes.js';
+import { examplePalettes } from '../data/example-palettes';
 
 export function addExampleControls ({
   controlsElem,

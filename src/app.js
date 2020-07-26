@@ -1,5 +1,5 @@
-import { fillGrid, addExampleControls, Test } from './js/helpers/index.js';
-import { PaletteGenerator } from './js/PaletteGenerator.js';
+import { fillGrid, addExampleControls, Test } from './js/helpers/index';
+import { PaletteGenerator } from './js/palette-generator';
 import './scss/styles.scss';
 
 const inputElem = document.querySelector('.codes__textarea--input');

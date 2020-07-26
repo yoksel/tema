@@ -1,4 +1,4 @@
-import { hslToString } from './index.js';
+import { hslToString } from './index';
 
 // https://css-tricks.com/converting-color-spaces-in-javascript/
 

@@ -1,4 +1,4 @@
-import { colorToHsl, getColorData, hslToFormat } from './helpers/index.js';
+import { colorToHsl, getColorData, hslToFormat } from './helpers/index';
 
 export class PaletteGenerator {
   getData () {

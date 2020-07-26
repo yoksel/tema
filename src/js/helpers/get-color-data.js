@@ -1,4 +1,4 @@
-import { named } from '../data/named.js';
+import { named } from '../data/named';
 
 export function getColorData (color) {
   const format = getColorFormat(color);

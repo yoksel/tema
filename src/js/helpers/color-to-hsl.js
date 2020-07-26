@@ -1,4 +1,4 @@
-import { named } from '../data/named.js';
+import { named } from '../data/named';
 
 export function colorToHsl ({ color, format }) {
   color = color.toLowerCase();
