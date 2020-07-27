@@ -14,7 +14,7 @@ const codesControls = document.querySelector('.codes__controls');
 
 const palette = new PaletteGenerator();
 /* eslint-disable-next-line */
-const test = new Test(setPalette);
+const test = new Test({inputElem, setPalette});
 
 setPalette();
 

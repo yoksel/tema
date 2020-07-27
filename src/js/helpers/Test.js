@@ -32,11 +32,13 @@ $scss-color: #0B486B;
 `;
 
 export class Test {
-  constructor(func) {
-    this.func = func;
+  constructor({ inputElem, setPalette }) {
+    this.setPalette = setPalette;
+    this.inputElem = inputElem;
   }
 
   run() {
-
+    this.inputElem.value = testValues;
+    this.setPalette();
   }
 }
