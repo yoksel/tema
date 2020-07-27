@@ -74,6 +74,10 @@ ${this.inputValue}
       }];
     };
 
+    return this.addTints({ color, colorName, hsl, format, alphaUnits });
+  }
+
+  addTints ({ color, colorName, hsl, format, alphaUnits }) {
     let finalFormat = this.finalFormat;
 
     if (finalFormat === 'initial') {
