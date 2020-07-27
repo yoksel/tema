@@ -37,12 +37,20 @@ ${this.inputValue}
     const colors = this.getColorsFromString(inputValue);
     this.colorSteps = this.getColorSteps(step, stepsQuantity);
     this.palette = this.createPalette(colors);
+    this.hasBlack = false;
+    this.hasWhite = false;
   }
 
   createPalette (colors) {
-    const dataList = colors.map(singleColorData => {
+    if (colors.length === 0) {
+      return [];
+    }
+
+    let dataList = colors.map(singleColorData => {
       return this.getColorsList(singleColorData);
     });
+
+    dataList = this.addBlackAndWhite(dataList);
 
     return dataList;
   }
@@ -83,7 +91,23 @@ ${this.inputValue}
         let initialColor = '';
         const changedHSL = this.hslChangeLight(hsl, stepValue);
 
+        // If there are not black and white
+        // they must be added to palette later
+        if (changedHSL.l === 0) {
+          this.hasBlack = true;
+        } else if (changedHSL.l === 100) {
+          this.hasWhite = true;
+        }
+
         let isEdgeValue = changedHSL.l < 0 || changedHSL.l > 100;
+
+        if (changedHSL.l < 0) {
+          // Create black
+          changedHSL.l = 0;
+        } else if (changedHSL.l > 100) {
+          // Create white
+          changedHSL.l = 100;
+        }
 
         if (stepName === 'normal') {
           newName = colorName;
@@ -111,6 +135,46 @@ ${this.inputValue}
         });
         return prev;
       }, []);
+  }
+
+  addBlackAndWhite (datalist) {
+    if (this.hasBlack && this.hasWhite) {
+      return datalist;
+    }
+
+    datalist = datalist.map(singleColorDataList => {
+      return singleColorDataList.map((item, index) => {
+        if (!item.isEdgeValue) {
+          return item;
+        }
+
+        const isDark = item.name.includes('dark');
+
+        if ((isDark && this.hasBlack) || (!isDark && this.hasWhite)) {
+          return item;
+        }
+
+        let itemToCompare = singleColorDataList[index - 1];
+
+        if (isDark) {
+          itemToCompare = singleColorDataList[index + 1];
+        }
+
+        if (!itemToCompare.isEdgeValue) {
+          item.isEdgeValue = false;
+
+          if (isDark) {
+            this.hasBlack = true;
+          } else {
+            this.hasWhite = true;
+          }
+        }
+
+        return item;
+      });
+    });
+
+    return datalist;
   }
 
   hslChangeLight (hslObj, changes) {
