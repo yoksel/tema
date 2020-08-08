@@ -31,14 +31,22 @@ $scss-color: #0B486B;
 --color-black: hsl(0, 0%, 0%);
 `;
 
+interface ITestParams {
+  inputElem: HTMLInputElement,
+  setPalette: () => void
+}
+
 export class Test {
-  constructor({ inputElem, setPalette }) {
-    this.setPalette = setPalette;
-    this.inputElem = inputElem;
+  _setPalette: () => void;
+  _inputElem: HTMLInputElement;
+
+  constructor ({ inputElem, setPalette }: ITestParams) {
+    this._setPalette = setPalette;
+    this._inputElem = inputElem;
   }
 
-  run() {
-    this.inputElem.value = testValues;
-    this.setPalette();
+  run (): void {
+    this._inputElem.value = testValues;
+    this._setPalette();
   }
 }
