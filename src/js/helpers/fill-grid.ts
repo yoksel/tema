@@ -1,4 +1,12 @@
-export function fillGrid ({ elem, data, stepsQuantity }) {
+import { IcolorDataFull } from '../ts-interfaces/interfaces';
+
+interface IfillGrid {
+  elem: HTMLDivElement,
+  data: IcolorDataFull[][],
+  stepsQuantity: string
+}
+
+export const fillGrid = ({ elem, data, stepsQuantity }: IfillGrid): void => {
   elem.innerHTML = '';
   let index = 0;
 
@@ -9,11 +17,12 @@ export function fillGrid ({ elem, data, stepsQuantity }) {
     } else if (index === data.length - 1) {
       lineClass = 'palette__cell--last-line';
     }
-    const colorsCells = colorData
-      .map(({ name, hsl, color, isBase, isKeyword, isEdgeValue }) => {
+    const colorsCells: string[] = (<IcolorDataFull[]>colorData)
+      .map((item) => {
+        let { colorName, hsla, color, isBase, isKeyword, isEdgeValue } = item;
         const classList = ['palette__cell'];
-        let content = `<span class="palette__cell-content">${name}</span>`;
-        const { l } = hsl;
+        let content = `<span class="palette__cell-content">${colorName}</span>`;
+        const { l } = hsla;
 
         if (isBase) {
           classList.push('palette__cell--base');
@@ -46,5 +55,5 @@ export function fillGrid ({ elem, data, stepsQuantity }) {
     index++;
   }
 
-  elem.style.setProperty('--columns', stepsQuantity * 2 + 1);
-}
+  elem.style.setProperty('--columns', `${+stepsQuantity * 2 + 1}`);
+};

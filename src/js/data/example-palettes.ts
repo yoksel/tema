@@ -1,4 +1,4 @@
-export const examplePalettes = {
+export const examplePalettes: Record<string, unknown> = {
   // https://www.colourlovers.com/palette/2236059/Dusty_box
   'Dusty box': [
     '#FDF2C5',

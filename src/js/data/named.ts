@@ -1,4 +1,4 @@
-export const named = {
+export const named: Record<string, unknown> = {
   aliceblue: 'rgb(240,248,255)',
   antiquewhite: 'rgb(250,235,215)',
   aqua: 'rgb(0,255,255)',

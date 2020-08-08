@@ -1,6 +1,7 @@
+import { IcolorDataMin } from '../ts-interfaces/interfaces';
 import { named } from '../data/named';
 
-export function getColorData (color) {
+export const getColorData = (color: string): IcolorDataMin => {
   const format = getColorFormat(color);
   const alphaUnits = getAlphaUnits({
     color,
@@ -11,9 +12,9 @@ export function getColorData (color) {
     format,
     alphaUnits
   };
-}
+};
 
-function getColorFormat (color) {
+const getColorFormat = (color: string): string => {
   color = color
     .toLowerCase()
     .trim();
@@ -44,14 +45,20 @@ function getColorFormat (color) {
   }
 
   return 'Unknown color format';
+};
+
+interface IgetAlphaUnits {
+  color: string,
+  format: string
 }
 
-function getAlphaUnits ({ color, format }) {
+const getAlphaUnits = ({ color, format }: IgetAlphaUnits): string => {
   if (!['hsla', 'rgba'].includes(format)) {
     return '';
   }
 
-  const colorPartsStr = color.match(/\((.*)\)/)[1];
+  const colorPartsMatch = <string[]>color.match(/\((.*)\)/);
+  const colorPartsStr: string = colorPartsMatch[1];
   const colorParts = colorPartsStr
     .split(',')
     .map(item => item.trim());
@@ -63,4 +70,4 @@ function getAlphaUnits ({ color, format }) {
   }
 
   return '';
-}
+};

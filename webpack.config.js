@@ -4,29 +4,37 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = () => {
   return {
     mode: 'development',
-    entry: './src/app.js',
+    entry: './src/app.ts',
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/'
     },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js']
+    },
     module: {
       rules: [
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/
+        },
         {
           test: /\.scss$/,
           use: [
             'style-loader',
             'css-loader',
             'postcss-loader',
-            'sass-loader',
+            'sass-loader'
           ]
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
           use: [
-            'file-loader',
-          ],
-        },
+            'file-loader'
+          ]
+        }
       ]
     },
     devtool: 'inline-source-map',
@@ -39,7 +47,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'src/index-tmpl.html'
-      }),
+      })
     ]
-  }
+  };
 };

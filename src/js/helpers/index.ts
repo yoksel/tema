@@ -1,7 +1,8 @@
-export { colorToHsl } from './color-to-hsl';
+export { colorToHsla } from './color-to-hsl';
 export { hslToString } from './hsl-to-string';
 export { hslToFormat } from './hsl-to-format';
 export { getColorData } from './get-color-data';
+export { getColorsFromString } from './get-colors-from-string';
 export { Test } from './test';
 export { fillGrid } from './fill-grid';
 export { addExampleControls } from './add-example-controls';
